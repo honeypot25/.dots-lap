@@ -1,0 +1,227 @@
+{
+  // EDITOR
+  "editor.bracketPairColorization.enabled": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.definitionLinkOpensInPeek": true,
+  "editor.fontFamily": "'Hack', 'LigaConsolas Nerd Font', 'monospace', monospace",
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.insertSpaces": true, // maybe overridden
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyTabStops": true,
+  "editor.tabSize": 4, // overridden by languages
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+
+  // LANGUAGES
+  // "Prettier - Code formatter": C, [S]CSS, HTML, JS, JSON[C], Markdown, YAML // instead of default "vscode.<lang>-language-features"
+  "[c]": {
+    // "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.tabSize": 4
+  },
+  // CSS
+  "[css]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // Dart
+  // "[dart]": {
+  //   "editor.selectionHighlight": false,
+  //   "editor.suggest.snippetsPreventQuickSuggestions": false,
+  //   "editor.suggestSelection": "first",
+  //   "editor.tabCompletion": "onlySnippets",
+  //   "editor.wordBasedSuggestions": false,
+  //   "editor.tabSize": 2
+  // },
+  // JavaScript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.tabSize": 2
+  },
+  // Python
+  "python.formatting.provider": "autopep8",
+  "pythonIndent.keepHangingBracketOnLine": true,
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "pythonIndent.useTabOnHangingIndent": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.tabSize": 4
+  },
+  // SCSS
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // shell
+  "[shellscript]": {
+    "files.eol": "\n",
+    "editor.tabSize": 2
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // EXTENSIONS
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        // re-generate the PDF anyway
+        "match": ".md$",
+        "cmd": "md2pdf ${file}"
+        // "isAsync": true
+      },
+      // {
+      //   // stick with one Zathura instance only
+      //   "match": ".md$",
+      //   "cmd": "pgrep zathura || { [ -f ${fileDirname}/${fileBasenameNoExt}.pdf ] && zathura ${fileDirname}/${fileBasenameNoExt}.pdf; }"
+      // },
+      {
+        // stick with one Evince instance only
+        "match": ".md$",
+        "cmd": "pgrep evince || { [ -f ${fileDirname}/${fileBasenameNoExt}.pdf ] && evince ${fileDirname}/${fileBasenameNoExt}.pdf; }"
+      }
+    ]
+  },
+  "code-runner.enableAppInsights": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.fileDirectoryAsCwd": true, // don't change dir with executorMap
+  "code-runner.executorMap": {
+    "javascript": "node",
+    // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "java": "javac ./$fileName && java ./$fileNameWithoutExt",
+    // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "c": "gcc ./$fileName -o ./$fileNameWithoutExt && ./$fileNameWithoutExt",
+    // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "g++ ./$fileName -o ./$fileNameWithoutExt && ./$fileNameWithoutExt",
+    "php": "php",
+    "python": "python3",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "shellscript": "bash",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    // "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "rust": "rustc ./$fileName && ./$fileNameWithoutExt",
+    "dart": "dart",
+    "haskell": "runhaskell"
+  },
+  "C_Cpp.autocompleteAddParentheses": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "latex-workshop.bibtex-format.trailingComma": true,
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latexindent.path": "/usr/bin/latexindent",
+  "latex-workshop.view.pdf.viewer": "tab",
+  // "latex-workshop.view.pdf.external.viewer.command": "/usr/bin/evince",
+  // "latex-workshop.view.pdf.external.viewer.args": ["%PDF%"],
+  "latex-workshop.latex.clean.fileTypes": [
+    "%DOCFILE%.acn",
+    "%DOCFILE%.acr",
+    "%DOCFILE%.alg",
+    "%DOCFILE%.aux",
+    "%DOCFILE%.bbl",
+    "%DOCFILE%.blg",
+    "%DOCFILE%.fdb_latexmk",
+    "%DOCFILE%.fls",
+    "%DOCFILE%.glg",
+    "%DOCFILE%.glo",
+    "%DOCFILE%.gls",
+    "%DOCFILE%.idx",
+    "%DOCFILE%.ind",
+    "%DOCFILE%.lof",
+    "%DOCFILE%.log",
+    "%DOCFILE%.lot",
+    "%DOCFILE%.out",
+    "%DOCFILE%.snm",
+    "%DOCFILE%.synctex(busy)",
+    "%DOCFILE%.synctex.gz(busy)",
+    "%DOCFILE%.toc",
+    "%DOCFILE%.nav",
+    "%DOCFILE%.vrb"
+  ],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "markdown.extension.print.imgToBase64": true,
+  "markdown.extension.print.theme": "dark",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown.extension.theming.decoration.renderHardLineBreak": true,
+  "markdown.extension.theming.decoration.renderTrailingSpace": true,
+  "markdown.extension.toc.unorderedList.marker": "+",
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.enableTypographer": true,
+  "markdown-preview-enhanced.mermaidTheme": "dark",
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  "oneDarkPro.vivid": true,
+  "oneDarkPro.markdownStyle": true,
+  "shellcheck.executablePath": "/bin/shellcheck",
+  "shellcheck.exclude": ["1090", "1091", "2139", "2154"],
+
+  // STYLE
+  "window.autoDetectHighContrast": true,
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${dirty}${activeEditorMedium} - ${rootName}",
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+  },
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+  "workbench.preferredHighContrastColorTheme": "One Dark Pro Darker",
+  "workbench.startupEditor": "none",
+
+  // MISC
+  "debug.openDebug": "openOnDebugBreak",
+  "explorer.confirmDragAndDrop": true,
+  // "files.autoSave": "afterDelay",
+  // "files.autoSaveDelay": 300000,
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.tabs.enabled": true,
+  "update.mode": "start",
+  "markdown.extension.toc.levels": "1..3"
+}

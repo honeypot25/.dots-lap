@@ -1,0 +1,48 @@
+# .dirs
+.cache/
+.cpan/
+.dbus/
+.designer/
+.dotfiles*/
+.gnupg/
+.java/
+.keychain/
+.logs/
+.mysql/
+.pki/
+.pub-cache/
+.thumbnails/
+.vnc/
+.yarn/
+.zoom/
+
+# .files
+.bash_history
+.ICEauthority
+.log
+.netrc
+.pciids-cache
+.sudo_as_admin_successful
+.tmp
+.uuid
+.viminfo
+.wget-hsts
+.Xauthority
+.xsession-errors
+*.exclude
+*.log
+*.old*
+
+# coding
+.vscode/
+.env
+*.session*
+
+# python
+.python_history
+__pycache__/
+*.py[cod]=
+
+# ssh: exclude all except config
+.ssh/*
+!.ssh/config

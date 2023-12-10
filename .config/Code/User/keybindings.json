@@ -1,0 +1,25 @@
+[
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "home",
+    "command": "code-runner.run",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+home",
+    "command": "code-runner.stop"
+  },
+  {
+    "key": "ctrl+k ctrl+v",
+    "command": "markdown.showPreviewToSide",
+    "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  }
+]
