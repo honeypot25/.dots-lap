@@ -1,3 +1,3 @@
 # ~/.dots-lap
 
-Personal scripts for Laptop
+Personal dotfiles (Laptop)
