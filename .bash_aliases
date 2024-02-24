@@ -38,30 +38,16 @@ alias lalh="lal --header"
 alias lt="ls -T"
 alias l.='ls -a | egrep "^\."'
 
-# pacman & paru
-# install
-alias pac="sudo pacman -Sy"
-alias par="paru -Sy"
-# query updates
-alias pacq="sudo pacman -Sy && sudo pacman -Qu"
-alias parq="paru -Sy && paru -Qua"
-# autoupdate
-alias pacup="sudo pacman -Syu" # update standard pkgs
-alias parup="paru -Sua"        # update AUR pkgs
-alias up="SKIP_AUTOSNAP= paru" # update standard & AUR pkgs (paru -Syu)
-# misc
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-
-# get fastest mirrors
-alias mirrors="sudo reflector \
-  --country it \
-  --fastest 3 \
-  --latest 3 \
-  --protocol http,https \
-  --completion-percent 100 \
-  --sort rate \
-  --threads 4 \
-  --save /etc/pacman.d/mirrorlist"
+# DNF
+alias upd="sudo dnf update"
+alias upg="sudo dnf upgrade"
+alias up="sudo dnf update && sudo dnf upgrade"
+alias dnfc="sudo dnf clean all"
+alias dnfch="sudo dnf check"
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
+alias dnfar="sudo dnf autoremove"
+alias dnfs="sudo dnf search"
 
 # colorize grep output
 alias grep="grep --color=auto"

@@ -51,7 +51,7 @@ WHITE='\[\e[1;37m\]'
 
 ### PATHS
 export ANDROID_HOME="$HOME"/.Android/Sdk
-#export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"
+export ANDROID_SDK_HOME="$HOME"
 export PATH="$PATH":"$HOME"/.bin:"$HOME"/.local/bin:"$HOME"/apps:/opt/android-studio/bin:/usr/share/texmf-dist
 
 ### PROMPT

@@ -1,10 +1,12 @@
 \usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 % change the table of contents to include a new page after it
 \let\myTOC\tableofcontents
 \renewcommand{\tableofcontents}{\myTOC\newpage}
 
-% start a new page for each section 
+% start each section on a new page
 \newcommand{\sectionbreak}{\clearpage}
 
 % background color for inline code
@@ -13,3 +15,6 @@
 \renewcommand{\texttt}[1]{
     \colorbox{bgcolor}{\myTextttt{#1}}
 }
+
+% scale all figures
+\setkeys{Gin}{width=0.7\linewidth}
